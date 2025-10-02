@@ -2,10 +2,8 @@
 import React from "react";
 import { motion } from "motion/react";
 
-
-
 const transition = {
-  type: "spring",
+  type: "spring" as const, // Explicitly cast to a valid type
   mass: 0.5,
   damping: 11.5,
   stiffness: 100,
