@@ -17,7 +17,7 @@ function upcoming() {
     {
       title: 'The Art of Songwriting',
       description:
-        'Learn the craft of songwriting from experienced musicians and songwriters.',
+        "Learn the craft of songwriting from experienced musicians and songwriters.",
       slug: 'the-art-of-songwriting',
       isFeatured: true,
     },

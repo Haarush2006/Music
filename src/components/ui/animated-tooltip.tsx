@@ -46,7 +46,7 @@ export const AnimatedTooltip = ({
 
   return (
     <>
-      {items.map((item, idx) => (
+      {items.map((item) => (
         <div
           className="group relative -mr-4"
           key={item.name}
@@ -84,6 +84,7 @@ export const AnimatedTooltip = ({
               </motion.div>
             )}
           </AnimatePresence>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             onMouseMove={handleMouseMove}
             height={100}
