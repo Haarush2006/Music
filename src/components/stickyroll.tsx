@@ -3,11 +3,11 @@ import React from "react";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
 
 
-interface contentType {
-  title: string,
-  description: string,
-  content?: React.ReactNode
-}[]
+// interface contentType {
+//   title: string,
+//   description: string,
+//   content?: React.ReactNode
+// }[]
 
 function Stickyroll() {
 

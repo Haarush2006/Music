@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import surajImage from "@/data/images/suraj.jpeg";
 import jeevanImage from "@/data/images/jeevan.jpeg";
 import harshithImage from "@/data/images/harshith.jpeg";

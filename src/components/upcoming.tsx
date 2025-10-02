@@ -1,7 +1,5 @@
 "use client"
 
-
-import Link from 'next/link'
 import React from 'react'
 import { HoverEffect } from "./ui/card-hover-effect";
 import { HoverBorderGradient } from './ui/hover-border-gradient';
