@@ -19,7 +19,9 @@ export default function Home() {
       <Testimonals />
       <Upcoming/>
       <Educators />
-
+      <div>
+        Hello
+      </div>
       
 
     </main>
