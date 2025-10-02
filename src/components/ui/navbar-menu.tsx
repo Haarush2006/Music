@@ -90,6 +90,7 @@ export const ProductItem = ({
 }) => {
   return (
     <a href={href} className="flex space-x-2">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
         width={140}
@@ -109,7 +110,7 @@ export const ProductItem = ({
   );
 };
 
-export const HoveredLink = ({ children, ...rest }: any) => {
+export const HoveredLink = ({ children, ...rest }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { children: React.ReactNode }) => {
   return (
     <a
       {...rest}
