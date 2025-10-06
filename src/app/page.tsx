@@ -7,7 +7,7 @@ import Cards from "@/components/cards";
 import Testimonals from "@/components/testimonals";
 import Upcoming from "@/components/upcoming";
 import Educators from "@/components/educators";
-
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -19,14 +19,7 @@ export default function Home() {
       <Testimonals />
       <Upcoming/>
       <Educators />
-      <div>
-        Hello
-        Hello
-        Hello
-        Hello
-        Hello
-        Hello
-      </div>
+      <Footer />
       
 
     </main>
