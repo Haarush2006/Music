@@ -21,6 +21,11 @@ export default function Home() {
       <Educators />
       <div>
         Hello
+        Hello
+        Hello
+        Hello
+        Hello
+        Hello
       </div>
       
 
