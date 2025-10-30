@@ -26,7 +26,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     // required: [true, 'Verify Code is required'],
   },
-  verifyCodeExpiry: {
+  expiryDate: {
     type: Date,
     // required: [true, 'Verify Code Expiry is required'],
   }
