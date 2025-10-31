@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { UserModel } from "@/schema/user";
 import mongoose from "mongoose";
 import connectdb from "@/lib/connectdb";
+import { sendOtpToMail } from "@/lib/sendOtpToMail";
+
 
 export async function POST(req: Request) {
   try {
@@ -38,10 +40,19 @@ export async function POST(req: Request) {
         user.verifyCode
     )
 
+    if(!emailOtp.success){
+
+      return NextResponse.json({
+        success: false,
+        message: "OTP generation failed",
+      });
+    }
     return NextResponse.json({
       success: true,
-      message: "OTP generated and sent successfully",
+      message: "OTP generated and sent",
     });
+    
+
   } catch (error) {
     console.error(error);
     return NextResponse.json(
