@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { UserModel } from "@/schema/user";
-import mongoose from "mongoose";
 import connectdb from "@/lib/connectdb";
 import { sendOtpToMail } from "@/lib/sendOtpToMail";
 

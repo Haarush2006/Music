@@ -14,12 +14,16 @@ export const authOptions: NextAuthOptions  = {
         password: { label: "Password", type: "password", optional: true },
         otp: { label: "OTP", type: "text", optional: true },
       },
-      async authorize(credentials: any) {
+      async authorize(credentials) {
 
         try {
             
             await connectdb()
     
+            if (!credentials) {
+              throw new Error("Missing credentials");
+            }
+
             const { identifier, password, otp } = credentials;
             const user = await UserModel.findOne({
                 $or: [{ email: identifier }, { password: identifier }],
@@ -70,7 +74,7 @@ export const authOptions: NextAuthOptions  = {
       }
       return token;
     },
-    async session({ session, token }: any) {
+    async session({ session, token }) {
       if (session && session.user) {
         session.user.id = token.id;
       }

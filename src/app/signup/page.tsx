@@ -4,6 +4,14 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 
+interface AxiosError {
+  response?: {
+    data?: {
+      message?: string;
+    };
+  };
+}
+
 const SignupPage = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -29,8 +37,9 @@ const SignupPage = () => {
       // Use the success message from the API response
       setSuccess(response.data.message || "Account created successfully!");
       setTimeout(() => router.push("/login"), 2000); // Redirect to login page
-    } catch (err: any) {
-      setError(err.response?.data?.message || "Something went wrong");
+    } catch (err: unknown) {
+      const error = err as AxiosError;
+      setError(error.response?.data?.message || "Something went wrong");
     }
   };
 

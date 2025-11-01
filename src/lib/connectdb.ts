@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 interface connectionType  {
-    isConnected? :Number
+    isConnected? :number
 }
 
 const connection: connectionType = {} 

@@ -2,6 +2,6 @@
 
 export interface apiResponse {
     success : boolean,
-    message : String
+    message : string
 
 }

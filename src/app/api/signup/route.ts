@@ -33,7 +33,7 @@ export async function POST(req:NextRequest){
         const expiryDate = new Date();
         expiryDate.setMinutes(expiryDate.getMinutes() + 5);
         
-        const user = await UserModel.create({
+        await UserModel.create({
             username,
             email,
             mobile,

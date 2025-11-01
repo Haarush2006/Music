@@ -5,12 +5,21 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 
+// Define a type for the error object
+interface AxiosError {
+  response?: {
+    data?: {
+      message?: string;
+    };
+  };
+}
+
 const LoginPage = () => {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
   const [useOtp, setUseOtp] = useState(false);
   const [otp, setOtp] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(""); 
   const [success, setSuccess] = useState("");
   const router = useRouter();
 
@@ -47,8 +56,9 @@ const LoginPage = () => {
       } else {
         router.push("/"); // Redirect to dashboard
       }
-    } catch (err) {
-      setError("An error occurred. Please try again.");
+    } catch (err: unknown) {
+      const error = err as AxiosError;
+      setError(error.response?.data?.message || "An error occurred. Please try again.");
     }
   };
   
@@ -67,8 +77,9 @@ const LoginPage = () => {
 
       setSuccess(response.data.message || "OTP sent successfully!");
       setUseOtp(true); // Switch to OTP mode after generating OTP
-    } catch (err: any) {
-      setError(err.response?.data?.message || "Failed to generate OTP");
+    } catch (err: unknown) {
+      const error = err as AxiosError;
+      setError(error.response?.data?.message || "Failed to generate OTP");
     }
   };
 
